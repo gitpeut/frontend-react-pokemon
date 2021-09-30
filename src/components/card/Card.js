@@ -25,8 +25,6 @@ function Card({pokemonUrl}) {
                             imageUrl: result.data.sprites.front_shiny,
                         }
                     );
-                    //console.log( pokemonData );
-
                 } catch (e) {
                     console.log(`Fetch data from pokeapi failed ${e}`);
                 }
@@ -37,12 +35,13 @@ function Card({pokemonUrl}) {
         [pokemonUrl]
     );
 
+
     return (
         <div className="card" key={pokemonData.name}>
             {Object.keys(pokemonData).length > 0 &&
             <>
                 <h2>{pokemonData.id} {pokemonData.name}</h2>
-                <img src={pokemonData.imageUrl} alt={pokemonData.name}/>
+                <img src={pokemonData.imageUrl} alt={pokemonData.name} />
                 <h3>Moves: {pokemonData.moves}</h3>
                 <h3>Weight: {pokemonData.weight}</h3>
                 <h4>Abilities</h4>

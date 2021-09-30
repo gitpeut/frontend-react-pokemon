@@ -5,6 +5,7 @@ import Card from "./components/card/Card";
 import './App.css';
 
 
+
 function App() {
     const [pokemonList, setPokemonList] = useState({});
     const [pokemonUrl, setPokemonUrl] = useState('https://pokeapi.co/api/v2/pokemon/');
@@ -49,14 +50,15 @@ function App() {
             <div>
                 {Object.keys(pokemonList).length > 0 &&
                 pokemonList.urls.map((url) => {
+                    // url van een Card eindigt op bv.  /1/
+                    // dat cijfer halen we eruit met split.
                     const spliturl = url.split('/');
                     const splitlen = spliturl.length;
                     const key = `card-${spliturl[splitlen - 2]}`;
-                    return (<Card pokemonUrl={url} key={key}/>);
+                    return (<Card pokemonUrl={url} key={key} />);
                 })
 
                 }
-
             </div>
 
             {Object.keys(pokemonList).length > 0 &&
