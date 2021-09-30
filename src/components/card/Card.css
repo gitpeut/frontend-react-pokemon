@@ -1,0 +1,58 @@
+
+
+.card{
+    width:  16vw;
+    background-color: hotpink;
+    color: black;
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.card h2{
+    margin: auto;
+    text-align: center;
+    font-size: 1.3vw;
+
+}
+
+.card h3{
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 0.9vw;
+}
+
+.card h4{
+    display: block;
+    margin: 1px;
+    padding:1px;
+    text-align: center;
+    font-size: 0.9vw;
+    font-style: italic;
+    width: 100%;
+    background-color: gray;
+}
+
+.card img{
+    width: 90%;
+    border: 1px solid blue;
+    margin: 8px;
+    background-color: white;
+}
+
+.card p{
+    margin: 1px;
+    padding:1px;
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    font-size: 0.9vw;
+    font-style: italic;
+}
