@@ -27,7 +27,8 @@ function App() {
                     list.urlid = result.data.results.map((result) => {
                             // url van een Card eindigt op bv.  /1/
                             // dat cijfer halen we eruit met split.
-                            const cardid = result.url.split('/')[result.url.split('/').length - 2 ];
+                            const spliturls = result.url.split('/');
+                            const cardid    = spliturls[spliturls.length - 2 ];
                             return ({ url: result.url, id: cardid } );
                         }
                     );
