@@ -24,8 +24,11 @@ function App() {
                     list.next = result.data.next;
                     list.previous = result.data.previous;
 
-                    list.urls = result.data.results.map((result) => {
-                            return (result.url);
+                    list.urlid = result.data.results.map((result) => {
+                            // url van een Card eindigt op bv.  /1/
+                            // dat cijfer halen we eruit met split.
+                            const cardid = result.url.split('/')[result.url.split('/').length - 2 ];
+                            return ({ url: result.url, id: cardid } );
                         }
                     );
                     //console.log(list);
@@ -49,13 +52,10 @@ function App() {
             {Object.keys(pokemonList).length <= 0 && <h3>Loading data...</h3>}
             <div>
                 {Object.keys(pokemonList).length > 0 &&
-                pokemonList.urls.map((url) => {
-                    // url van een Card eindigt op bv.  /1/
-                    // dat cijfer halen we eruit met split.
-                    const spliturl = url.split('/');
-                    const splitlen = spliturl.length;
-                    const key = `card-${spliturl[splitlen - 2]}`;
-                    return (<Card pokemonUrl={url} key={key} />);
+                pokemonList.urlid.map((urlid) => {
+                    // urlid is een object met { url: http..., id: id }
+                    const key = `card-${urlid.id}`;
+                    return (<Card pokemonUrl={urlid.url} key={key} />);
                 })
 
                 }
