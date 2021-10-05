@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vw;
+    padding-right: 14vw;
+    width: 30%;
+}
+
+body{
+    height: auto !important;
+    min-height: 100vh;
+    background-color: lightpink;
+}
+
+.app-div{
+    width: 100vw;
+}
+
+.button-div{
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4%;
+}
+
+.button-div button{
+     width: 18vw;
+     margin-bottom: 4%;
+     text-align: center;
+     background-color: deeppink;
+     color: white;
+     font-weight: bold;
+     font-size: 0.5rem;
+     padding: 0.2rem;
+ }
+
+.button-div button:disabled{
+    background-color: lightpink;
+    color: #fffafa;
+    font-weight: normal;
+}
